@@ -902,7 +902,7 @@
         },
         l = [],
         i = (o("4de4"), o("c975"), o("b64b"), o("d3b7"), o("ac1f"), o("25f0"), o("5319"), "https://github.com/ACL4SSR/ACL4SSR"),
-        a = "https://saraphine.tk/Clash-rule/remoteconfig/saraphineconfig.ini",
+        a = "https://saraphine.cf/Clash-rule/remoteconfig/saraphineconfig.ini",
         r = "https://github.com/tindy2013/subconverter/releases",
         s = "https://api.v1.mk/sub?",
         c = "clash&new_name=true",
