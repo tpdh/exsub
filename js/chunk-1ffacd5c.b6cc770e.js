@@ -971,7 +971,7 @@
                             label: "Saraphineの配置",
                             options: [{
                                 label: "Saraphineの负载均衡",
-                                value: "https://saraphine.tk/Clash-rule/remoteconfig/saraphineconfig.ini"
+                                value: "https://saraphine.cf/Clash-rule/remoteconfig/saraphineconfig.ini"
                             }]
                         },
                         {
