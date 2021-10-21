@@ -442,7 +442,39 @@
                         value: e
                     }
                 })
-            })), 1)], 1), "1" === e.advanced ? o("div", [o("el-form-item", {
+            })), 1)], 1),
+            o("el-form-item", {
+                attrs: {
+                    label: "短链选择:"
+                }
+            },
+            [o("el-select", {
+                staticStyle: {
+                    width: "100%"
+                },
+                attrs: {
+                    "allow-create": "",
+                    filterable: "",
+                    placeholder: "可输入其他可用短链API"
+                },
+                model: {
+                    value: e.form.shortType,
+                    callback: function(t) {
+                        e.$set(e.form, "shortType", t)
+                    },
+                    expression: "form.shortType"
+                }
+            },
+            e._l(e.options.shortTypes, (function(e, t) {
+                return o("el-option", {
+                    key: t,
+                    attrs: {
+                        label: t,
+                        value: e
+                    }
+                })
+            })), 1)], 1),
+            "1" === e.advanced ? o("div", [o("el-form-item", {
                 attrs: {
                     label: "包含节点:"
                 }
@@ -557,7 +589,19 @@
                     },
                     expression: "form.udp"
                 }
-            })], 1), o("el-row", [o("el-checkbox", {
+            })], 1),
+            [o("el-checkbox", {
+                attrs: {
+                    label: "启用 TFO"
+                },
+                model: {
+                    value: e.form.tfo,
+                    callback: function(t) {
+                        e.$set(e.form, "tfo", t)
+                    },
+                    expression: "form.tfo"
+                }
+            })], o("el-row", [o("el-checkbox", {
                 attrs: {
                     label: "节点类型"
                 },
@@ -568,7 +612,8 @@
                     },
                     expression: "form.appendType"
                 }
-            })], 1), o("el-row", [o("el-checkbox", {
+            })], 1), 
+            o("el-row", [o("el-checkbox", {
                 attrs: {
                     label: "排序节点"
                 },
@@ -579,7 +624,20 @@
                     },
                     expression: "form.sort"
                 }
-            })], 1), o("el-row", [o("el-checkbox", {
+            })], 1), 
+            [o("el-checkbox", {
+                attrs: {
+                    label: "跳过证书验证"
+                },
+                model: {
+                    value: e.form.scv,
+                    callback: function(t) {
+                        e.$set(e.form, "scv", t)
+                    },
+                    expression: "form.scv"
+                }
+            })],
+            o("el-row", [o("el-checkbox", {
                 attrs: {
                     label: "过滤非法节点"
                 },
@@ -906,9 +964,9 @@
         r = "https://github.com/tindy2013/subconverter/releases",
         s = "https://api.v1.mk/sub?",
         c = "clash&new_name=true",
-        u = "https://suo.yt/short",
+        u = "https://v1.mk/short",
         f = "https://api.wcc.best/config/upload",
-        p = "https://t.me/ACL4SSR",
+        p = "https://t.me/freeyule",
         m = {
             data: function() {
                 var e = {
@@ -917,9 +975,10 @@
                     isPC: !0,
                     options: {
                         clientTypes: {
-                            "Clash新参数": "clash&new_name=true",
-                            "ClashR新参数": "clashr&new_name=true",
-                            Clash: "clash",
+                            "Clash": "clash&new_name=true",
+                            "ClashR": "clashr&new_name=true",
+                            "base64(全协议)": "mixed",
+                            Surge2: "surge&ver=2",
                             Surge3: "surge&ver=3",
                             Surge4: "surge&ver=4",
                             Quantumult: "quan",
@@ -928,11 +987,16 @@
                             Loon: "loon",
                             SSAndroid: "sssub",
                             V2Ray: "v2ray",
-                            ss: "ss",
-                            ssr: "ssr",
-                            ssd: "ssd",
-                            ClashR: "clashr",
-                            Surge2: "surge&ver=2"
+                            SS: "ss",
+                            SSR: "ssr",
+                            SSD: "ssd",                           
+                        },
+                        shortTypes: {
+                            "suo.yt": "https://suo.yt/short",
+                            "sub.cm": "https://sub.cm/short",
+                            "v1.mk": "https://v1.mk/short",
+                            "d1.mk": "https://d1.mk/short",
+                            "dlj.tf": "https://dlj.tf/short",
                         },
                         customBackend: {
                             "localhost:25500 本地版(需要转换工具)": "http://localhost:25500/sub?",
@@ -1239,6 +1303,7 @@
                         sourceSubUrl: "",
                         clientType: "",
                         customBackend: "",
+                        shortType: "https://suo.yt/short",
                         remoteConfig: "",
                         excludeRemarks: "",
                         includeRemarks: "",
@@ -1298,7 +1363,7 @@
             },
             methods: {
                 onCopy: function() {
-                    this.$message.success("Copied!")
+                    this.$message.success("已复制!")
                 },
                 goToProject: function() {
                     window.open(i)
@@ -1351,20 +1416,19 @@
                     var e = this;
                     if ("" === this.customSubUrl) return this.$message.warning("请先生成订阅链接，再获取对应短链接"),
                     !1;
+                    var t = "" === this.form.shortType ? c: this.form.shortType;
                     this.loading = !0;
-                    var t = new FormData;
-                    t.append("longUrl", btoa(this.customSubUrl)),
-                    this.$axios.post(u, t, {
+                    var o = new FormData;
+                    o.append("longUrl", btoa(this.customSubUrl)),
+                    this.$axios.post(t, o, {
                         header: {
                             "Content-Type": "application/form-data; charset=utf-8"
                         }
                     }).then((function(t) {
                         1 === t.data.Code && "" !== t.data.ShortUrl ? (e.curtomShortSubUrl = t.data.ShortUrl, e.$copyText(t.data.ShortUrl), e.$message.success("短链接已复制到剪贴板")) : e.$message.error("短链接获取失败：" + t.data.Message)
-                    })).
-                    catch((function() {
+                    }))["catch"]((function() {
                         e.$message.error("短链接获取失败")
-                    })).
-                    finally((function() {
+                    }))["finally"]((function() {
                         e.loading = !1
                     }))
                 },
