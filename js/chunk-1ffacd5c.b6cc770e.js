@@ -306,7 +306,7 @@
             },
             [o("el-radio", {
                 attrs: {
-                    label: "1"
+                    label: "2"
                 },
                 model: {
                     value: e.advanced,
@@ -318,7 +318,7 @@
             },
             [e._v("基础模式")]), o("el-radio", {
                 attrs: {
-                    label: "2"
+                    label: "1"
                 },
                 model: {
                     value: e.advanced,
@@ -337,7 +337,7 @@
                 attrs: {
                     type: "textarea",
                     rows: "3",
-                    placeholder: "支持订阅或ss/ssr/vmess链接，多个链接每行一个或用 | 分隔"
+                    placeholder: "支持订阅或ss/ssr/v2ray/trojan链接，多个链接每行一个或用 | 分隔"
                 },
                 on: {
                     blur: e.saveSubUrl
@@ -442,7 +442,7 @@
                         value: e
                     }
                 })
-            })), 1)], 1), "2" === e.advanced ? o("div", [o("el-form-item", {
+            })), 1)], 1), "1" === e.advanced ? o("div", [o("el-form-item", {
                 attrs: {
                     label: "包含节点:"
                 }
@@ -936,11 +936,12 @@
                         },
                         customBackend: {
                             "localhost:25500 本地版(需要转换工具)": "http://localhost:25500/sub?",
-                            "api.v1.mk(肥羊作者提供)": "https://api.v1.mk/sub?",
-                            "subcon.dlj.tf(subconverter作者提供)": "https://subcon.dlj.tf/sub?",
+                            "api.v1.mk(肥羊提供)": "https://api.v1.mk/sub?",
+                            "api.tsutsu.cc(つつ提供)":"https://api.tsutsu.cc/sub?",
+                            "subcon.dlj.tf(subconverter提供)": "https://subcon.dlj.tf/sub?",
                             "pub-api-1.bianyuan.xyz (边缘-跳转subcon.dlj.tf)": "https://pub-api-1.bianyuan.xyz/sub?",
                             "subconverter-web.now.sh(subconverter-跳转subcon.dlj.tf)": "https://subconverter-web.now.sh/sub?",
-                            "subconverter.herokuapp.com(subconverter作者提供3)": "https://subconverter.herokuapp.com/sub?",
+                            "subconverter.herokuapp.com(subconverter提供)": "https://subconverter.herokuapp.com/sub?",
                             "sub.id9.cc(品云提供)": "https://sub.id9.cc/sub?",
                             "api.dler.io(sub作者&lhie1提供)": "https://api.dler.io/sub?",
                             "api.wcc.best(sub-web作者提供)": "https://api.wcc.best/sub?"
@@ -951,6 +952,9 @@
                         },
                         {
                             value: "https://api.v1.mk/sub?"
+                        },
+                        {
+                            value: "https://api.tsutsu.cc/sub?"
                         },
                         {
                             value: "https://subcon.dlj.tf/sub?"
@@ -1339,9 +1343,9 @@
                     !1;
                     this.customSubUrl = t + "target=" + this.form.clientType + "&url=" + encodeURIComponent(n) + "&insert=" + this.form.insert,
                     "" !== o && (this.customSubUrl += "&config=" + encodeURIComponent(o)),
-                    "2" === this.advanced && ("" !== this.form.excludeRemarks && (this.customSubUrl += "&exclude=" + encodeURIComponent(this.form.excludeRemarks)), "" !== this.form.includeRemarks && (this.customSubUrl += "&include=" + encodeURIComponent(this.form.includeRemarks)), "" !== this.form.filename && (this.customSubUrl += "&filename=" + encodeURIComponent(this.form.filename)), this.form.appendType && (this.customSubUrl += "&append_type=" + this.form.appendType.toString()), this.customSubUrl += "&emoji=" + this.form.emoji.toString() + "&list=" + this.form.nodeList.toString() + "&udp=" + this.form.udp.toString() + "&tfo=" + this.form.tfo.toString() + "&scv=" + this.form.scv.toString() + "&fdn=" + this.form.fdn.toString() + "&sort=" + this.form.sort.toString(), !0 === this.form.tpl.surge.doh && (this.customSubUrl += "&surge.doh=true"), "clash" === this.form.clientType && (!0 === this.form.tpl.clash.doh && (this.customSubUrl += "&clash.doh=true"), this.customSubUrl += "&new_name=" + this.form.new_name.toString())),
+                    "1" === this.advanced && ("" !== this.form.excludeRemarks && (this.customSubUrl += "&exclude=" + encodeURIComponent(this.form.excludeRemarks)), "" !== this.form.includeRemarks && (this.customSubUrl += "&include=" + encodeURIComponent(this.form.includeRemarks)), "" !== this.form.filename && (this.customSubUrl += "&filename=" + encodeURIComponent(this.form.filename)), this.form.appendType && (this.customSubUrl += "&append_type=" + this.form.appendType.toString()), this.customSubUrl += "&emoji=" + this.form.emoji.toString() + "&list=" + this.form.nodeList.toString() + "&udp=" + this.form.udp.toString() + "&tfo=" + this.form.tfo.toString() + "&scv=" + this.form.scv.toString() + "&fdn=" + this.form.fdn.toString() + "&sort=" + this.form.sort.toString(), !0 === this.form.tpl.surge.doh && (this.customSubUrl += "&surge.doh=true"), "clash" === this.form.clientType && (!0 === this.form.tpl.clash.doh && (this.customSubUrl += "&clash.doh=true"), this.customSubUrl += "&new_name=" + this.form.new_name.toString())),
                     this.$copyText(this.customSubUrl),
-                    this.$message.success("定制订阅已复制到剪贴板")
+                    this.$message.success("恭喜您，定制订阅已成功复制！！！")
                 },
                 makeShortUrl: function() {
                     var e = this;
