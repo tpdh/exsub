@@ -991,11 +991,11 @@
                             SSR: "ssr",
                             SSD: "ssd",                           
                         },
-                        shortTypes: {
-                            "suo.yt": "https://suo.yt/short",
-                            "sub.cm": "https://sub.cm/short",
+                        shortTypes: {                           
                             "v1.mk": "https://v1.mk/short",
                             "d1.mk": "https://d1.mk/short",
+                            "suo.yt": "https://suo.yt/short",
+                            "sub.cm": "https://sub.cm/short",
                             "dlj.tf": "https://dlj.tf/short",
                         },
                         customBackend: {
@@ -1303,7 +1303,7 @@
                         sourceSubUrl: "",
                         clientType: "",
                         customBackend: "",
-                        shortType: "https://suo.yt/short",
+                        shortType: "https://v1.mk/short",
                         remoteConfig: "",
                         excludeRemarks: "",
                         includeRemarks: "",
