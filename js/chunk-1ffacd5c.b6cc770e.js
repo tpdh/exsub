@@ -962,7 +962,7 @@
         i = (o("4de4"), o("c975"), o("b64b"), o("d3b7"), o("ac1f"), o("25f0"), o("5319"), "https://github.com/ACL4SSR/ACL4SSR"),
         a = "https://saraphine.cf/Clash-rule/remoteconfig/saraphineconfig.ini",
         r = "https://github.com/tindy2013/subconverter/releases",
-        s = "https://api.v1.mk/sub?",
+        s = "http://sub-backend.saraphine.cf/sub?",
         c = "clash&new_name=true",
         u = "https://v1.mk/short",
         f = "https://api.wcc.best/config/upload",
@@ -992,16 +992,18 @@
                             SSD: "ssd",                           
                         },
                         shortTypes: {                           
+                            "dlj.tf": "https://dlj.tf/short",
                             "v1.mk": "https://v1.mk/short",
                             "d1.mk": "https://d1.mk/short",
                             "suo.yt": "https://suo.yt/short",
                             "sub.cm": "https://sub.cm/short",
-                            "dlj.tf": "https://dlj.tf/short",
                         },
                         customBackend: {
                             "localhost:25500 本地版(需要转换工具)": "http://localhost:25500/sub?",
+                            "Saraphineの后端": "http://sub-backend.saraphine.cf/sub?",
                             "api.v1.mk(肥羊提供)": "https://api.v1.mk/sub?",
                             "api.tsutsu.cc(つつ提供)":"https://api.tsutsu.cc/sub?",
+                            "sub.789.st(佚名)":"https://sub.789.st/sub?",
                             "subcon.dlj.tf(subconverter提供)": "https://subcon.dlj.tf/sub?",
                             "pub-api-1.bianyuan.xyz (边缘-跳转subcon.dlj.tf)": "https://pub-api-1.bianyuan.xyz/sub?",
                             "subconverter-web.now.sh(subconverter-跳转subcon.dlj.tf)": "https://subconverter-web.now.sh/sub?",
@@ -1015,10 +1017,16 @@
                             value: "http://localhost:25500/sub?"
                         },
                         {
+                            value: "http://sub-backend.saraphine.cf/sub?"
+                        },
+                        {
                             value: "https://api.v1.mk/sub?"
                         },
                         {
                             value: "https://api.tsutsu.cc/sub?"
+                        },
+                        {
+                            value: "https://sub.789.st/sub?"
                         },
                         {
                             value: "https://subcon.dlj.tf/sub?"
@@ -1303,7 +1311,7 @@
                         sourceSubUrl: "",
                         clientType: "",
                         customBackend: "",
-                        shortType: "https://v1.mk/short",
+                        shortType: "https://dlj.tf/short",
                         remoteConfig: "",
                         excludeRemarks: "",
                         includeRemarks: "",
