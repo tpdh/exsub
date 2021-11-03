@@ -1001,7 +1001,7 @@
                         customBackend: {
                             "localhost:25500 本地版(需要转换工具)": "http://localhost:25500/sub?",
                             "Saraphineの第一后端": "https://mk74.ml/sub?",
-                            "Saraphineの第二后端": "http://sub-backend.saraphine.cf/sub?",
+                            "Saraphineの第二后端(CDN加速)": "https://subconverter.saraphine.cf/sub?",
                             "api.v1.mk(肥羊提供)": "https://api.v1.mk/sub?",
                             "api.tsutsu.cc(つつ提供)":"https://api.tsutsu.cc/sub?",
                             "sub.789.st(佚名)":"https://sub.789.st/sub?",
@@ -1021,7 +1021,7 @@
                             value: "https://mk74.ml/sub?"
                         },
                         {
-                            value: "http://sub-backend.saraphine.cf/sub?"
+                            value: "https://subconverter.saraphine.cf/sub?"
                         },
                         {
                             value: "https://api.v1.mk/sub?"
