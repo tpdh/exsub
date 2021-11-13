@@ -962,7 +962,7 @@
         i = (o("4de4"), o("c975"), o("b64b"), o("d3b7"), o("ac1f"), o("25f0"), o("5319"), "https://github.com/ACL4SSR/ACL4SSR"),
         a = "https://saraphine.cf/Clash-rule/remoteconfig/saraphineconfig.ini",
         r = "https://github.com/tindy2013/subconverter/releases",
-        s = "https://subconverter.saraphine.cf/sub?",
+        s = "https://sub.mk74.tk/sub?",
         c = "clash&new_name=true",
         u = "https://v1.mk/short",
         f = "https://api.wcc.best/config/upload",
@@ -1000,7 +1000,8 @@
                         },
                         customBackend: {
                             "localhost:25500 本地版(需要转换工具)": "http://localhost:25500/sub?",
-                            "Saraphineの第一后端(CDN加速)": "https://subconverter.saraphine.cf/sub?",
+                            "Saraphineの第一后端(CDN加速)": "https://sub.mk74.tk/sub?",
+                            "Saraphineの第二后端(CDN加速)": "https://subconverter.saraphine.cf/sub?",
                             "api.v1.mk(肥羊提供)": "https://api.v1.mk/sub?",
                             "api.tsutsu.cc(つつ提供)":"https://api.tsutsu.cc/sub?",
                             "sub.789.st(佚名)":"https://sub.789.st/sub?",
@@ -1015,6 +1016,9 @@
                         backendOptions: [
                         {
                             value: "http://localhost:25500/sub?"
+                        },
+                        {
+                            value: "https://sub.mk74.tk/sub?"
                         },
                         {
                             value: "https://subconverter.saraphine.cf/sub?"
