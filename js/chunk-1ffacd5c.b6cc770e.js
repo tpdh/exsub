@@ -262,7 +262,7 @@
 				},
 				slot: "header"
 			},
-			[e._v(" Saraphineの转换 "), o("svg-icon", {
+			[e._v(" 转换 "), o("svg-icon", {
 				staticStyle: {
 					"margin-left": "20px"
 				},
