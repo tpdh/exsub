@@ -1038,7 +1038,7 @@
 						fdn: !1,
 						appendType: !1,
 						insert: !1,
-						new_name: !0,
+						new_name: !1,
 						tpl: {
 							surge: {
 								doh: !1
@@ -1128,7 +1128,7 @@
 					!1;
 					this.customSubUrl = t + "target=" + this.form.clientType + "&url=" + encodeURIComponent(n) + "&insert=" + this.form.insert,
 					"" !== o && (this.customSubUrl += "&config=" + encodeURIComponent(o)),
-					"1" === this.advanced && (
+	"1" === this.advanced && (
     "" !== this.form.excludeRemarks && (this.customSubUrl += "&exclude=" + encodeURIComponent(this.form.excludeRemarks)),
     "" !== this.form.includeRemarks && (this.customSubUrl += "&include=" + encodeURIComponent(this.form.includeRemarks)),
     "" !== this.form.filename && (this.customSubUrl += "&filename=" + encodeURIComponent(this.form.filename)),
@@ -1149,7 +1149,7 @@
     // 处理 clash
     "clash" === this.form.clientType && (
         !0 === this.form.tpl.clash.doh && (this.customSubUrl += "&clash.doh=true"),
-        this.customSubUrl += "&new_name=" + this.form.new_name.toString()
+		!0 ===	this.form.new_name && (this.customSubUrl += "&new_name=" + this.form.new_name.toString())
     )
 );
 					this.$copyText(this.customSubUrl),
